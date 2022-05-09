@@ -9,6 +9,9 @@ function Footer() {
             className='footer'
             style={{ backgroundImage: `url(${BackgroundFooter})` }}
         >
+                    <div className="container">
+            
+            
             <div className='footer__content'>
                 <div className='footer__content__left'>
                     <div className='footer__content__left__images'>
@@ -54,6 +57,7 @@ function Footer() {
                         </li>
                     </ul>
                 </div>
+            </div>
             </div>
         </div>
     );
