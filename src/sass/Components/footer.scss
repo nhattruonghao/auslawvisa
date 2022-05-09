@@ -1,0 +1,95 @@
+.footer{
+    height: 550px;
+    @include tablet {
+        height: 400px;
+        background-position: bottom;
+        background-size: contain;
+        
+    }
+    @include mobile {
+        height: 450px;
+        background-position: bottom;
+        background-size: contain;
+        
+    }
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-color: rgba(29, 187, 235, 0.3);
+    padding: 40px 110px;
+    @include pclow {
+        padding: 40px 40px;
+    }
+    &__content{
+        @include flex(center,space-between);
+        @include mobile {
+            flex-direction: column;
+        }
+        &__left{
+            @include flex(center, center);
+            flex-direction: column;
+            width: 350px;
+            &__images{
+                @include flex(center, center);
+                img{
+                    height: 90px;
+                    @include tablet{
+                        height: 70px;
+                    }
+                    &:first-child{
+                        margin-right: 18px;
+                    }
+                }
+            }
+            &__text {
+                margin-top: 12px;
+                text-align: center;
+                span{
+                    text-align: center;
+                    font-size: 14px;
+                    color: $txt-main-color;
+                    font-weight: 500;
+                    @include tablet{
+                        font-size: 12px
+                    }
+                }
+            }
+        }
+        &__right{
+            width: 350px;
+            padding: 20px;
+            @include flex(center, center);
+            .contact-list{
+                .contact-item-title{
+                    margin-bottom: 8px;
+                    span{
+                        font-size: 18px;
+                        font-weight: 500;
+                        color: $txt-main-color;
+                        @include tablet{
+                            font-size: 14px
+                        }
+                    }
+                }
+                .contact-item{
+                    @include flex(flex-start, flex-start);
+                    padding: 6px 0;
+                    span{
+                        font-size: 15px;
+                        font-weight: 500;
+                        color: $txt-main-color;
+                        @include tablet{
+                            font-size: 12px
+                        }
+                    }
+                    i{
+                        font-size: 24px;
+                        margin-right: 8px;
+                        @include tablet{
+                            font-size: 18px
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
