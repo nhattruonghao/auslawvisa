@@ -4,12 +4,12 @@ import PropTypes from 'prop-types'
 function Grid(props) {
 
 const style = {
-    gap: props.gap ? `${props.gap}` : '0'
+    gap: props.gap ? `${props.gap}px` : '0'
 }
 const col = props.col ? `grid-col-lg-${props.col}` : '';
 const mdCol = props.mdCol ? `grid-col-md-${props.mdCol}` : '';
-const smCol = props.smCol ? `grid-col-sm${props.smCol}` : '';
-const xsCol = props.xsCol ? `grid-col-xs${props.xsCol}` : '';
+const smCol = props.smCol ? `grid-col-sm-${props.smCol}` : '';
+const xsCol = props.xsCol ? `grid-col-xs-${props.xsCol}` : '';
 
   return (
     <div className={`grid ${col} ${mdCol} ${smCol} ${xsCol}`} style={style}>

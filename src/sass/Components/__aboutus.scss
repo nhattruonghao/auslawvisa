@@ -1,0 +1,124 @@
+.about{
+    margin-top: 95px;
+    margin-bottom: 60px;
+
+    @include tablet{
+        margin-top: 45px;
+    margin-bottom: 25px;
+    } 
+
+    @include mobile{
+        margin-top: 8px;
+    margin-bottom: 25px;
+    } 
+    &__layout{
+        @include flex(center, space-between);
+        @include mobile{
+            flex-direction: column;
+        } 
+
+        &__text{
+            width: 50%;
+            @include mobile{
+                width: 100%;
+                @include flex(center, center);
+                flex-direction: column;
+            } 
+            &__title{
+                @include flex(flex-start, center);
+                flex-direction: column;
+                
+                span{
+                    &:first-child{
+                        font-size: 16px;
+                        font-weight: 500;
+                        color: $txt-second-color;
+                        font-family: 'M PLUS Rounded 1c', sans-serif;
+                        @include pclow {
+                            font-size: 16px;
+                        }
+                        @include tablet {
+                            font-size: 12px;
+                        }
+                    }
+                    &:last-child{
+                        font-size: 32px;
+                        font-weight: 600;
+                        color: $txt-main-color;
+                        font-family: 'M PLUS Rounded 1c', sans-serif;
+                        @include pclow {
+                            font-size: 24px;
+                        }
+                        @include tablet {
+                            font-size: 19px;
+                        }
+                    }
+                }
+            }
+            &__desc{
+                margin-right: 60px;
+                @include mobile{
+                    margin-right: 0;
+                }
+                margin-top: 22px;
+                text-align: left;
+                @include pclow{
+                    margin-top: 16px;
+                    font-size: 14px;
+                }
+                @include tablet{
+                
+                    font-size: 12px;
+                    margin-top: 8px;
+                }
+                @include flex(flex-start, center);
+                flex-direction: column;
+                line-height: 1.5;
+                color: $txt-second-color;
+
+                span{
+                    &:nth-child(2){
+                        margin-top: 20px;
+                        font-size: 16px;
+                        font-weight: 500;
+                        color: $txt-main-color;
+                        @include pclow {
+                            margin-top: 10px;
+                            font-size: 14px;
+                        }
+                        @include tablet{
+                            font-size: 12px;
+                            margin-top: 8px
+                        } 
+                    }
+                    &:nth-child(3){
+                        margin-top: 12px;
+                        font-size: 18px;
+                        font-weight: 500;
+                        color: $txt-main-color;
+                        @include pclow {
+                            margin-top: 10px;
+                            font-size: 14px;
+                        }
+                        @include tablet{
+                            font-size: 12px;
+                            margin-top: 8px
+                        } 
+                    }
+                }
+            }
+        }
+
+        &__img{
+            width: 50%;
+            text-align: center;
+            @include mobile{
+                width: 100%;
+            }
+            img{
+                width: 100%;
+
+            }
+        }
+    }
+}
