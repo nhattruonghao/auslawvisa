@@ -9,6 +9,7 @@ function ServicesItem() {
                 <div className='services__title'>
                     <span>THIS IS WHAT WE ARE GOOD AT</span>
                     <span>OUR SERVICES</span>
+                   
                 </div>
                 <div className="services__list">
                     <Grid col={3} mdCol={3} smCol={2} xsCol={1} gap={20}>

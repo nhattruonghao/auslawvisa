@@ -1,15 +1,13 @@
 .about{
-    margin-top: 95px;
-    margin-bottom: 60px;
+    margin-top: 45px;
+
 
     @include tablet{
-        margin-top: 45px;
-    margin-bottom: 25px;
+        margin-top: 25px;
     } 
 
     @include mobile{
         margin-top: 8px;
-    margin-bottom: 25px;
     } 
     &__layout{
         @include flex(center, space-between);

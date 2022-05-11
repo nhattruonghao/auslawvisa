@@ -23,6 +23,11 @@ a{
    text-decoration: none;
    color: unset;
 }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 
 $numbers: (0, 1, 2, 3, 4, 5, 6, 7, 8);
 

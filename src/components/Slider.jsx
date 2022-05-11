@@ -9,7 +9,7 @@ function Slider(props) {
         setActiveIndex(index); 
     };
     const prevSlider = () => {
-        const index = activeIndex - 1 < 0 ? DataSlider.length - 1 : activeIndex + 1
+        const index = activeIndex - 1 < 0 ? DataSlider.length - 1 : activeIndex - 1
         setActiveIndex(index);
     };
 
@@ -38,11 +38,11 @@ function Slider(props) {
                     <div className='slider__control__item' onClick={prevSlider}>
                         <i className='bx bx-chevron-left'></i>
                     </div>
-                    <div className='slider__control__item'>
+                    {/* <div className='slider__control__item'>
                         <div className='index'>
                             {activeIndex + 1} / {DataSlider.length}
                         </div>
-                    </div>
+                    </div> */}
                     <div className='slider__control__item' onClick={nextSlider}>
                         <i className='bx bx-chevron-right'></i>
                     </div>
