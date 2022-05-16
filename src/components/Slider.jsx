@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import DataSlider from '../assets/fake-data/SliderData';
 import pattern from '../assets/images/patten.png';
 
@@ -127,9 +128,12 @@ const SliderItem = (props) => {
                     <div className='slider__item__content__texts__desc'>
                         {item.desc}
                     </div>
+                    <Link to={item.link}>
                     <div className='slider__item__content__texts__button'>
-                        TAKE A LOOK
+                       {item.textbtn}
                     </div>
+                    </Link>
+
                 </div>
                 <img src={item.img} alt='' />
             </div>

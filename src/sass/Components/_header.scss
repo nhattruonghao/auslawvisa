@@ -73,8 +73,7 @@
                 display: none
             }
             @include flex(center, space-between);
-            width: 300px;
-            margin-right: 50px;
+            width: 380px;
             font-weight: 500;
             &__item{
                     color: $txt-main-color;

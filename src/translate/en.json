@@ -1,0 +1,41 @@
+{
+    "lang": "Language",
+    "popuplang": {
+        "title": "Select Language",
+        "button": "Ok"
+    },
+    "header-menu":{
+        "item1": "Home",
+        "item2": "Services",
+        "item3": "Blog",
+        "item4": "About",
+        "item5": "FAQS"
+    },
+    "home": {
+        "title-services":{
+            "main": "OUR SERVICES",
+            "sub": "THIS IS WHAT WE ARE GOOD AT"
+        },
+        "about":{
+            "child1": "ALL ABOUT AUSTRALIAN VISA LAW",
+            "child2": "AUSTRALIAN VISA LAW",
+            "child3": "Australian Visa Law – The experts – Australian visa – Australian Migration. We are your best choice for an Australian Migration agent. Because we are skilled, concentrated and highly knowledgeable in Australian Visa Law, we bring true focus upon each client’s individual needs and desires and provide continual communication with you in an efficient and cost effective manner.",
+            "child4": "Our professional culture is underpinned by the highest ethical and professional standards.",
+            "child5": "AUSTRALIAN VISA LAW"
+        },
+        "contact-form":{
+            "title1-main" : "GET A QUOTE",
+            "title2-main" : "CONSULTING FORM",
+            "form1": "Your Name",
+            "form2": "Your Number",
+            "form3": "Your Email",
+            "form4": "Your Message",
+            "btn": "SEND",
+            "title-sub": "CONTACT US"
+        },
+        "footer": {
+            "left": "Australian Visa Law is a division of Flannery Law, a legal firm located on Queensland's beautiful Gold Coast, Australia.",
+            "title-right": "CONTACT US"
+        }
+    }
+}

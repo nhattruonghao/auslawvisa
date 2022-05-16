@@ -1,0 +1,41 @@
+{
+    "lang": "Ngôn ngữ",
+    "popuplang": {
+        "title": "Select Language",
+        "button": "Ok"
+    },
+    "header-menu":{
+        "item1": "Trang chủ",
+        "item2": "Dịch vụ",
+        "item3": "Blog",
+        "item4": "Về chúng tôi",
+        "item5": "FAQS"
+    },
+    "home": {
+        "title-services":{
+            "main": "DỊCH VỤ",
+            "sub": "CHÚNG TÔI CUNG CẤP CÁC"
+        },
+        "about":{
+            "child1": "VỀ AUSTRALIAN VISA LAW",
+            "child2": "AUSTRALIAN VISA LAW",
+            "child3": "Luật Visa Úc - Chuyên gia - Visa Úc - Di trú Úc. Chúng tôi là sự lựa chọn tốt nhất của bạn cho một đại diện Di trú Úc. Bởi vì chúng tôi có kỹ năng, tập trung và hiểu biết cao về Luật Thị thực Úc, chúng tôi tập trung thực sự vào nhu cầu và mong muốn cá nhân của mỗi khách hàng và cung cấp thông tin liên lạc liên tục với bạn theo cách hiệu quả và tiết kiệm chi phí.",
+            "child4": "Văn hóa nghề nghiệp của chúng tôi được củng cố bởi các tiêu chuẩn đạo đức và nghề nghiệp cao nhất.",
+            "child5": "AUSTRALIAN VISA LAW"
+        },
+        "contact-form":{
+            "title1-main" : "VUI LÒNG ĐIỀN VÀO",
+            "title2-main" : "PHIẾU TƯ VẤN",
+            "form1": "Tên",
+            "form2": "Điện thoại",
+            "form3": "Email",
+            "form4": "Lời nhắn",
+            "btn": "Gửi",
+            "title-sub": "LIÊN HỆ"
+        },
+        "footer": {
+            "left": "Luật Thị thực Úc là một bộ phận của Luật Flannery, một công ty pháp lý nằm trên Bờ biển Vàng xinh đẹp của Queensland, Úc.",
+            "title-right": "LIÊN HỆ"
+        }
+    }
+}

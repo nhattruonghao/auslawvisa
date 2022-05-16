@@ -1,0 +1,25 @@
+.right-icon{
+    position: fixed;
+    right: 0;
+    bottom: 12px;
+    cursor: pointer;
+    &__content{
+        @include flex(center, center);
+        background-color: rgba(255,255,255, 0.8);
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        padding: 8px;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+    }
+    &__title{
+        font-size: 12px;
+        color: $txt-main-color;
+        font-weight: 500;
+    }
+    &__flat{
+        margin-right: 6px;
+        img{
+            width: 20px;
+        }
+    }
+}

@@ -6,6 +6,7 @@ import Services from '../pages/Services';
 import Blog from '../pages/Blog';
 import About from '../pages/About';
 import Faqs from '../pages/Faqs';
+import OverviewPage from '../pages/OverviewPage';
 
 
 function Router() {
@@ -17,6 +18,7 @@ function Router() {
             <Route path="/blog" element={<Blog />} />
             <Route path="/about" element={<About />} />
             <Route path="/faqs" element={<Faqs />} />
+            <Route path="/overview" element={<OverviewPage />} />
         </Route>
       </Routes>
    );

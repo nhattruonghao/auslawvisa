@@ -1,0 +1,16 @@
+.helmet{
+    height: $header-height;
+    position: relative;
+    width: 100%;
+    z-index: 3;
+    
+    &__img{
+        opacity: 0.1;
+        position: absolute;
+        height: 100%;
+        left: 0;
+        right: 0;
+        z-index: 3;
+    }
+
+}

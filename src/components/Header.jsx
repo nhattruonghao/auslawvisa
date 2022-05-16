@@ -2,6 +2,9 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../assets/images/logo2.png';
 import whatsapp from '../assets/images/whatsapp.png';
+import { useDispatch, useSelector } from 'react-redux';
+import {selectMenuMobile, toggleMenuMobile, closeMenuMobile, openMenuMobile} from '../features/Ui/uiSlice';
+import {FormattedMessage} from 'react-intl';
 
 const mainNav = [
     {
@@ -26,10 +29,18 @@ const mainNav = [
     },
 ];
 function Header() {
-    const [toggleMenu, setToggleMenu] = useState(false);
     const handleToggleMenu = () => {
-        setToggleMenu(!toggleMenu);
+        dispatch(toggleMenuMobile());
     };
+    const handleCloseMobileMenu = () => {
+        dispatch(closeMenuMobile());
+    }
+    const handleOpenMobileMenu = () => {
+        dispatch(openMenuMobile());
+    }
+
+    const dispatch = useDispatch();
+    const toggleMenu = useSelector(selectMenuMobile);
     const headerRef = useRef(null);
     useEffect(() => {
         window.addEventListener('scroll', () => {
@@ -48,14 +59,14 @@ function Header() {
                 // If the menu is open and the clicked target is not within the menu,
                 // then close the menu
                 if (toggleMenu && headerRef.current && !headerRef.current.contains(e.target)) {
-                    setToggleMenu(false)
+                    handleCloseMobileMenu()
                 }
               }
               document.addEventListener("mousedown", checkIfClickedOutside, false)
           return () => {
             document.removeEventListener("mousedown", checkIfClickedOutside, false)
           }
-        }, [setToggleMenu])
+        }, [toggleMenu])
         
     return (
         <div
@@ -76,8 +87,11 @@ function Header() {
                                 key={index}
                                 className='header__menu__left__item'
                             >
-                                <Link to={item.path}>
-                                    <span>{item.display}</span>
+                                <Link to={item.path}
+                                >
+                                    <FormattedMessage
+                                    id={`header-menu.item${index+1}`} />
+                                    
                                 </Link>
                             </div>
                         );
@@ -92,7 +106,7 @@ function Header() {
                         className='header__menu__mobile-toggle'
                         onClick={handleToggleMenu}
                     >
-                        <i class='bx bx-menu-alt-left'></i>
+                        <i className='bx bx-menu-alt-left'></i>
                     </div>
                 </div>
             </div>
@@ -106,14 +120,11 @@ function Header() {
                 <div className='container'>
                     {mainNav.map((item, index) => {
                         return (
-                            <div
-                                key={index}
-                                className='header__menu__mobile__item'
-                            >
-                                <Link to={item.path}>
+                            <Link key={index}
+                            className='header__menu__mobile__item'
+                            onClick={()=> handleCloseMobileMenu()} to={item.path}>
                                     <span>{item.display}</span>
-                                </Link>
-                            </div>
+                            </Link>
                         );
                     })}
                 </div>
