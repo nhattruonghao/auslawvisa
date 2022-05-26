@@ -1,10 +1,25 @@
 .overview{
-    margin-top: 48px;
+    margin-top: 32px;
 
     &__title{
         color: $main-color;
         font-family: 'M PLUS Rounded 1c', sans-serif;
         font-size: 22px;
+        @include tablet{
+            font-size: 18px;
+        }
+        &__formtop{
+            font-size: 48px;
+            font-weight: 700;
+            font-family: 'M PLUS Rounded 1c', sans-serif;  
+            color: $main-color;
+            text-align: center;
+            margin-bottom: 8px;
+            @include tablet{
+                font-size: 32px;
+            }
+
+        }
     }
     &__desc{
         @include flex(flex-start, flex-start);
@@ -15,6 +30,136 @@
             margin-top: 12px;
             &:last-child{
                 font-weight: 500;
+            }
+            @include tablet{
+                font-size: 14px;
+            }
+        }
+        &__form{
+            max-width: $form-width;
+            text-align: justify;
+            color: $txt-second-color;
+            font-size: 15px;
+            font-weight: 500;
+            margin: 0 auto;
+            @include tablet{
+                font-size: 12px;
+            }
+        }
+    }
+    &__form{
+        margin: 12px 0;
+        background-color: rgba(105, 83, 168, 0.2);
+        padding: 25px;
+        border-radius: 10px;
+
+        &__question{
+            margin: 12px 0px;
+            color: $txt-main-color;
+            font-weight: 500;
+            font-size: 18px;
+        }
+        select{
+                /* Reset */
+                appearance: none;
+                border: 0;
+                outline: 0;
+                font: inherit;
+                /* Personalize */
+                width: 350px;
+                height: 48px;
+                padding: 0 4px 0 4px;
+                // background: url()
+                //     no-repeat right 0.8em center / 1.4em,
+                //   linear-gradient(to left, rgba(255, 255, 255, 0.3) 3em, rgba(255, 255, 255, 0.2) 3em);
+           
+                color: $txt-second-color;
+                border-radius: 0.25em;
+                box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2);
+                cursor: pointer;
+                /* <option> colors */
+                option {
+                  color: inherit;
+                  background-color: white;
+                  margin: 4px 4px;
+                  font-size: 15px;
+                }
+                /* Remove focus outline */
+                &:focus {
+                  outline: none;
+                }
+                /* Remove IE arrow */
+                &::-ms-expand {
+                  display: none;
+                }
+        }
+        &__inputtext{
+            input{
+                padding: 12px;
+                outline: none;
+                border: none;
+                border-radius: 5px;
+                width: 250px;
+            }
+        }
+        &__checkbox{
+            li{
+                padding: 14px;
+                background-color: rgba(255,255,255,0.3);
+                border-radius: 5px;
+                margin-bottom: 14px;
+                cursor: pointer;
+                color: $txt-second-color;
+                transition: background-color 0.2s ease;
+                input{
+                    margin-right: 8px;
+                }
+                &:hover{
+                    background-color: rgba(105, 83, 168, 0.5);
+                    color: white;
+                    font-weight: 500;
+                }
+            }
+        }
+        &__button{
+            margin-top: 18px;
+            button{
+                cursor: pointer;
+                outline: none;
+                background-color: $main-color;
+                border: none;
+                padding: 12px;
+                width: 70px;
+                border-radius: 5px;
+                margin-right: 12px;
+                color: white;
+                font-weight: 500;
+            }
+        }
+    }
+    &__block{
+        margin-top: 18px;
+        text-align: center;
+        margin-bottom: 18px;
+        &__item{
+            background-color: rgba(105, 83, 168,0.2);
+            border-radius: 5px;
+            padding: 8px;
+            &__icon{
+                i{
+                    font-size: 60px;
+                }
+            }
+            &__title{
+                font-size: 18px;
+                font-weight: 500;
+                color: $txt-main-color;
+                margin-bottom: 8px;
+            }
+            &__desc{
+                font-size: 14px;
+                font-weight: 500;
+                color: $txt-second-color;
             }
         }
     }

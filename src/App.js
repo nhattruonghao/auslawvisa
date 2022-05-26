@@ -8,6 +8,7 @@ import languageSlice, {selectLanguage,
   changeLanguage
 } from '../src/features/language/languageSlice';
 import { useSelector } from 'react-redux';
+import ScrollToTop from '../src/layouts/ScrollToTop';
 
 function App() {
   
@@ -38,6 +39,7 @@ const flattenMessages = ((nestedMessages, prefix = '') => {
   return (
     <BrowserRouter>
     <IntlProvider locale={language} messages={flattenMessages(translate[language])}>
+      <ScrollToTop />
         <Router/>
 
     </IntlProvider>

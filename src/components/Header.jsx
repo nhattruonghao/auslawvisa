@@ -16,8 +16,8 @@ const mainNav = [
         path: '/services',
     },
     {
-        display: 'Blog',
-        path: '/blog',
+        display: 'Overview',
+        path: '/overview',
     },
     {
         display: 'About',
@@ -45,8 +45,8 @@ function Header() {
     useEffect(() => {
         window.addEventListener('scroll', () => {
             if (
-                document.body.scrollTop > 80 ||
-                document.documentElement.scrollTop > 80
+                document.body.scrollTop > 20 ||
+                document.documentElement.scrollTop > 20
             ) {
                 headerRef.current.classList.add('shrink');
             } else {

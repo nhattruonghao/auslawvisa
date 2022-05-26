@@ -1,0 +1,77 @@
+.report{
+    width: 100%;
+    @include flex(center, center);
+    flex-direction: column;
+    &__title{
+        h2{
+            color: $main-color;
+            font-family: 'M PLUS Rounded 1c', sans-serif;
+        text-transform: uppercase;
+
+        }
+        font-size: 18px;
+        @include tablet{
+            font-size: 14px;
+        }
+        font-weight: 600;
+        margin: 12px auto;
+    }
+    &__subtitle{
+        color: $txt-second-color;
+        text-transform: uppercase;
+        font-family: 'M PLUS Rounded 1c', sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+        @include tablet{
+            font-size: 12px;
+        }
+    }
+    
+}
+.report-overview{
+    background-color: rgba(105, 83, 168, 0.1);
+    margin: 25px auto;
+    padding: 24px;
+    border-radius: 5px;
+    max-width: 800px;
+    
+    &__result{
+        background-color: rgba(105, 83, 168, 0.1);
+        border-radius: 5px;
+        padding: 8px 12px;
+        margin-bottom: 8px;
+    }
+    &__question{
+        margin-bottom: 8px;
+        color: $txt-second-color;
+        font-weight: 500;
+        span{
+            color: $main-color;
+        }
+    }
+    &__answer{
+        color: $txt-main-color;
+        font-weight: 500;
+        span{
+            color: $main-color;
+        }
+    }
+
+    &__button{
+        width: 100%;
+        text-align: center;
+        margin-top: 22px;
+        button{
+            cursor: pointer;
+            outline: none;
+            background-color: $main-color;
+            border: none;
+            padding: 12px;
+            width: 90px;
+            border-radius: 5px;
+            margin-right: 12px;
+            color: white;
+            font-weight: 500;
+        }
+    }
+}

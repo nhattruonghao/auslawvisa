@@ -1,0 +1,76 @@
+.thanks-page{
+    &__letter{
+        width: 750px;
+        @include pclow{
+            width: 600px;
+        }
+        @include tablet{
+            width: 450px;
+        }
+        @include mobile{
+            width: 350px;
+        }     
+        margin: 38px auto;
+        padding: 40px 50px;
+        border-radius: 5px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        &__title{
+            width: 100%;
+            text-align: center;
+            img{
+                width: 40%;
+                @include tablet{
+                    width: 50%;
+                }
+            }
+        }
+        &__divier{
+            width: 100%;
+            text-align: center;
+            margin: 38px 0;
+            @include tablet{
+                margin: 28px 0;
+            }
+            img{
+                @include tablet{
+                    width: 60%;
+                }
+            }
+        }
+        &__desc{
+            p{
+                font-family: 'Dancing Script', cursive;
+                text-align: justify;
+                line-height: 1.8;
+                font-size: 20px;
+                word-spacing: 1px;
+                text-indent: 1.5em;
+                color: $txt-main-color;
+                @include tablet{
+                    font-size: 17px;
+                }
+                @include mobile{
+                    font-size: 15px;
+                }  
+            }
+        }
+
+        &__info{
+            margin-top: 58px;
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            &__block{
+                @include flex(center, flex-end);
+                flex-direction: column;
+                img{
+                    width: 130px;
+                }
+                span{
+                    font-weight: 500;
+                    color: $txt-second-color;
+                }
+            }
+        }
+    }
+}

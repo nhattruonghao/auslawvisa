@@ -1,27 +1,19 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { questions } from '../../assets/fake-data/overviewData';
+import ReportOverview from './ReportOverview';
+import Grid from '../../components/Grid';
+import {Link} from 'react-router-dom';
 
 const OverviewFirstPage = () => {
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [currentAnswer, setCurrentAnswer] = useState('');
     const [textInput, setTextInput] = useState(false);
     const [report, setReport] = useState([]);
+    const [done, setDone] = useState(false);
 
     const handleGetData = (ques, ans) => {
         setReport([...report, { ques, ans }]);
         setCurrentAnswer(ans);
-    };
-
-    const handleGetDataTextInput = (e) => {
-        setTextInput(e.target.value);
-    };
-
-    const handleGetSubAnswer = (subQues, subAns) => {
-        let temp = report;
-        temp[currentQuestion].subAns = subAns;
-        temp[currentQuestion].subQues = subQues;
-
-        setReport(temp);
     };
 
     const searchskill = (answers, nameskill) => {
@@ -43,19 +35,16 @@ const OverviewFirstPage = () => {
         if (currentQuestion < questions.length) {
             setCurrentQuestion(currentQuestion + 1);
         }
+        if (currentQuestion === questions.length - 1) {
+            setCurrentQuestion(0);
+            setDone(true);
+        }
         if (textInput) {
             handleGetData(questions[currentQuestion].question, textInput);
-            setTextInput('');
         }
-    };
-    const prevQuestion = () => {
-        if (currentQuestion > 0) setCurrentQuestion(currentQuestion - 1);
-        const temp = report;
-        temp.pop();
-        setReport(temp);
+        setTextInput('');
     };
 
-    console.log(report);
     return (
         <div className='overview'>
             <div className='container'>
@@ -84,113 +73,85 @@ const OverviewFirstPage = () => {
                         guarantee migration to Australia. Advice from a
                         registered migration agent is recommended.
                     </span>
-                    <span>
-                        Please begin the assessment by answering the below
-                        questions:
-                    </span>
+                    <span>Take the eligibility assessment today!</span>
                 </div>
-                <div className='overview__form'>
-                    <div className='overview__form__question'>
-                        {questions[currentQuestion].question}
-                    </div>
-                    {/* SELECT */}
-                    <div className='overview__form__answer'>
-                        {questions[currentQuestion].answer.length > 5 ? (
-                            <>
-                                <select
-                                    className='overview__form__answer__select'
-                                    onChange={(e) =>
-                                        handleGetData(
-                                            questions[currentQuestion].question,
-                                            e.target.value,
-                                        )
-                                    }
-                                >
-                                    <option value=''>Select option</option>
-                                    {questions[currentQuestion].answer.map(
-                                        (item, index) => {
-                                            return (
-                                                <option
-                                                    key={index}
-                                                    value={item.name}
-                                                >
-                                                    {item.name}
-                                                </option>
-                                            );
-                                        },
-                                    )}
-                                </select>
 
-                                <div className='overview__form__question'>
-                                    {questions[currentQuestion].subQuestion &&
-                                        questions[currentQuestion].subQuestion}
-                                </div>
+                <div className='overview__block'>
+                    <Link to={'start'}>
+                    <button className='btn-temple' style={{ fontSize: '15px' }}>
+                        <h2>LET'S START OVERVIEW</h2>
+                    </button>
+                    </Link>
 
-                                {questions[currentQuestion].subQuestion ? (
-                                    <select
-                                        className='overview__form__answer__select'
-                                        onChange={(e) =>
-                                            handleGetSubAnswer(
-                                                questions[currentQuestion]
-                                                    .subQuestion,
-                                                e.target.value,
-                                            )
-                                        }
-                                    >
-                                        <option value=''>Select option</option>
-                                        {skills.map((item, index) => {
-                                            return (
-                                                <option
-                                                    key={index}
-                                                    value={item.name}
-                                                >
-                                                    {item.skill}
-                                                </option>
-                                            );
-                                        })}
-                                    </select>
-                                ) : (
-                                    ''
-                                )}
-                            </>
-                        ) : questions[currentQuestion].answer.length === 0 ? (
-                            //input
-                            <div className='overview__form__answer__inputtext'>
-                                <input
-                                    type='text'
-                                    name=''
-                                    id=''
-                                    onChange={(e) => handleGetDataTextInput(e)}
-                                    placeholder='Please fill in here'
-                                />
+                </div>
+                <div className='overview__title'>
+                    <h3>How To Find Out If You're Eligible...</h3>
+                </div>
+                <div className='overview__block'>
+                    <Grid col={3} mdCol={3} smCol={1} xsCol={1} gap={20}>
+                        <div className='overview__block__item'>
+                            <div className='overview__block__item__icon'>
+                                <i className='bx bx-search-alt'></i>
                             </div>
-                        ) : (
-                            // CHECKBOX
-                            questions[currentQuestion].answer.map(
-                                (item, index) => {
-                                    return (
-                                        <div
-                                        key={index}
-                                            className='overview__form__answer__checkbox'
-                                            onClick={(e) =>
-                                                handleGetData(
-                                                    questions[currentQuestion]
-                                                        .question,
-                                                    item.name
-                                                )
-                                            }
-                                        > 
-                                            {item.name}
-                                        </div>
-                                    );
-                                },
-                            )
-                        )}
+                            <div className='overview__block__item__title'>
+                                Step 1 - Search For Your Occupation
+                            </div>
+                            <div className='overview__block__item__desc'>
+                                Search the Australian Skilled Occupation /
+                                Shortage List below
+                            </div>
+                        </div>
+                        <div className='overview__block__item'>
+                            <div className='overview__block__item__icon'>
+                                <i className='bx bx-list-ul'></i>
+                            </div>
+                            <div className='overview__block__item__title'>
+                                Step 2 - Complete The Eligibility Assessment
+                            </div>
+                            <div className='overview__block__item__desc'>
+                                Take the ‘Online Migration Assessment.’(5
+                                minutes)
+                            </div>
+                        </div>
+                        <div className='overview__block__item'>
+                            <div className='overview__block__item__icon'>
+                                <i className='bx bxs-user-check'></i>
+                            </div>
+                            <div className='overview__block__item__title'>
+                                Step 3 - Get Results
+                            </div>
+                            <div className='overview__block__item__desc'>
+                                Receive an immediate answer to see if you are
+                                eligible to Live and Work in Australia
+                                permanently + Receive Your ‘Immigration to
+                                Australia Next-Steps Guide’
+                            </div>
+                        </div>
+                    </Grid>
+                </div>
+                <div className='overview__block'>
+                    <div className='overview__title'>
+                        <h4>
+                            TAKE YOUR ELIGIBILITY ASSESSMENT TODAY & RECEIVE
+                            YOUR:
+                        </h4>
+                    </div>
+                    <div className='overview__title'>
+                        <h4 style={{color: 'rgb(90, 90, 90)'}}>
+                            With this guide you can: Simply click on the blue
+                            LINKS at each step in order to access the required
+                            immigration forms to fill out + all the information
+                            you need.
+                        </h4>
+                    </div>
+                    <div className='overview__title'>
+                        <h4 style={{color: 'rgb(90, 90, 90)'}}>IT’S SIMPLE AND EASY!</h4>
                     </div>
                 </div>
-                <div className='overview__button'>
-                    <button onClick={() => prevQuestion()}>Back</button>
-                    <button onClick={() => nextQuestion()}>Next</button>
+                <div className="overview__block">
+                    <button className='btn-temple' style={{fontSize: '15px'}}>
+                        <h2>LET'S START OVERVIEW</h2>
+                    </button>
                 </div>
             </div>
         </div>

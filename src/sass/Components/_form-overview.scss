@@ -1,0 +1,58 @@
+.wrap-form-overview{
+    background-color: rgba(105, 83, 168,0.4);
+    padding: 16px;
+    margin-bottom: 42px;
+    border-radius: 10px;
+    box-shadow: $box-shadow;
+    max-width: $form-width;
+    margin-top: 12px;
+    margin-left: auto;
+    margin-right: auto;
+    
+ }
+ .form-outer{
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(255,255,255,1);
+    padding: 18px;
+    border-radius: 5px;
+ }
+ .form-label{
+    font-size: 16px;
+    font-weight: 500;
+    color: $txt-second-color;
+    padding: 12px 0;
+ }
+ .form-input-radio-outer{
+    padding: 9px 0;
+ }
+ .form-item-radio-label{
+    font-size: 15px;
+    font-weight: 500;
+    color: $txt-main-color;
+ }
+ .form-input-text{
+    padding: 12px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    background-color: rgba(1,1,1,0.1);
+
+    min-width: 100%;
+    color: $txt-main-color;
+    font-size: 16px;
+    font-weight: 500;
+ 
+ }
+ .form-input-radio{
+    margin-right: 8px;
+ }
+ .form-input-msg{
+    color: red;
+    font-size: 14px;
+    font-weight: 500;
+ }
+ 
+ .react-select-select{
+    margin-top: 12px;
+ }
